@@ -1,5 +1,7 @@
 # dsh-desktop-wallpaper
 
+[![CI](https://github.com/tt-zjy/dsh-desktop-wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/tt-zjy/dsh-desktop-wallpaper/actions/workflows/ci.yml)
+
 > A wallpaper plugin for **DeepSeek Harness**: pick any image, choose how much of the UI shows
 > through, blur the background — everything applies live, without restarting.
 
@@ -68,8 +70,13 @@ Panel values are stored per window origin, so they come back after a restart.
 
 The bundled default wallpaper is `assets/default.jpg` (1672×941). Dropping in a `default.png` or
 `default.svg` next to it also works — they are tried in the order jpg → png → svg, and if none
-exists the plugin simply leaves the UI untouched. To point at your own file, set `imagePath` on the
-patch entry:
+exists the plugin simply leaves the UI untouched.
+
+`dsh plugin install` already wires the entry for you — the package ships its own bundle patch
+(`cordis.patch.yml`), which the plugin manager adds to the profile's bundle list. The block below is
+for a **manual or home-layer install**; do not add it as well, or the plugin loads twice.
+
+To point at your own file, set `imagePath` on the patch entry:
 
 ```yaml
 - insert:

@@ -1,5 +1,7 @@
 # dsh-desktop-wallpaper
 
+[![CI](https://github.com/tt-zjy/dsh-desktop-wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/tt-zjy/dsh-desktop-wallpaper/actions/workflows/ci.yml)
+
 > **DeepSeek Harness** 的壁纸插件：换任意图片、调整界面透出程度、给背景加模糊——全部实时生效，不用重启。
 
 [English](README.md) | 简体中文
@@ -63,6 +65,11 @@ dsh plugin --profile <profile> install github:tt-zjy/dsh-desktop-wallpaper#v1.0.
 
 随包默认壁纸是 `assets/default.jpg`（1672×941）。在旁边放一张 `default.png` 或 `default.svg`
 也可以，按 jpg → png → svg 的顺序取用；三个都没有时插件不会改动界面。
+
+`dsh plugin install` 已经帮你把条目接好了——包自带 bundle patch（`cordis.patch.yml`），
+插件管理器会把它加进 profile 的 bundle 列表。下面这段是**手动安装或 home 用户层安装**时才用的；
+**不要两处都加**，否则插件会被加载两次。
+
 想指定自己的文件，在 patch 条目上写 `imagePath`：
 
 ```yaml

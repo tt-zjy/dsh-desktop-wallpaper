@@ -1,0 +1,17 @@
+# Bundle patch for dsh-desktop-wallpaper.
+#
+# Declared by package.json's `dsh.bundle.patch`. When someone runs
+#   dsh plugin --profile <name> install github:tt-zjy/dsh-desktop-wallpaper
+# the plugin manager adds this package to the profile's `dsh.profile.bundles`,
+# and this layer inserts the plugin's entry into the loader tree.
+#
+# Without this file the package would only be installed as a plain dependency
+# and would never load (dsh warns: "declares no dsh.bundle").
+- insert:
+    - id: desktop-wallpaper
+      name: dsh-desktop-wallpaper
+      # The host half needs the web server to serve the image, and fs to read it.
+      inject: [webServer, fs]
+      # Optional: point at your own wallpaper instead of the bundled default.
+      # config:
+      #   imagePath: C:\pictures\my-wallpaper.jpg

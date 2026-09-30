@@ -18,9 +18,13 @@
   "files": [
     "lib",
     "assets",
+    "cordis.patch.yml",
     "CHANGELOG.md"
   ],
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "inject": [],
       "platform": "web"
