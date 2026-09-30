@@ -1,0 +1,11 @@
+# Keep the repository's line endings deterministic across platforms.
+# Checkouts keep LF everywhere, so a Windows contributor does not rewrite every
+# line of a file just by saving it.
+* text=auto eol=lf
+
+# Binary assets are never converted.
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.ico binary

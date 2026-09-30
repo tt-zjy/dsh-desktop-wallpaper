@@ -1,0 +1,49 @@
+{
+  "name": "dsh-desktop-wallpaper",
+  "version": "1.0.0",
+  "description": "Wallpaper plugin for DeepSeek Harness: pick an image, tune UI translucency and background blur, all live without restarting.",
+  "license": "MIT",
+  "author": "tt-zjy",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "CHANGELOG.md"
+  ],
+  "dsh": {
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": "^0.2.0-rc.2"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "wallpaper",
+    "background",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tt-zjy/dsh-desktop-wallpaper.git"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node tests/unit.cjs",
+    "verify": "npm run check && npm test"
+  }
+}

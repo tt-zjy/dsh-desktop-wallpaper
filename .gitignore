@@ -1,0 +1,14 @@
+# Dependencies are never committed: this plugin has none at runtime.
+node_modules/
+
+# Local investigation artifacts and logs must never be published.
+.probe/
+*.log
+*.tmp
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
